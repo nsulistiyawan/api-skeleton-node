@@ -31,6 +31,7 @@ export async function createUser(req, res) {
     const user = await UserService.create({
       email: req.body.email,
       password: req.body.password,
+      level: req.body.level,
     });
     return res.status(201).json({
       status: 'success',

@@ -4,6 +4,7 @@ export const up = async (knex) => {
     table.string('email', 100);
     table.string('password', 64);
     table.boolean('is_active').defaultTo(1);
+    table.string('role').defaultTo('user');
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated').defaultTo(knex.fn.now());
   });

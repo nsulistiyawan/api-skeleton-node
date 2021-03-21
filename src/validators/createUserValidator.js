@@ -1,4 +1,5 @@
 import { check } from 'express-validator';
+import { USER_ROLE_ADMIN, USER_ROLE_USER } from '../constants';
 import * as UserService from '../services/userService';
 
 const validationRules = [
@@ -17,6 +18,7 @@ const validationRules = [
       }
       return true;
     }),
+  check('role').notEmpty().isIn([USER_ROLE_ADMIN, USER_ROLE_USER]),
   check('password').notEmpty().withMessage('Password field is required.'),
   check('password_confirmation')
     .notEmpty().withMessage('Password confirmation field is required.').bail()

@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({
+  path: '../../.env',
+});
 
 module.exports = {
 
@@ -27,7 +29,7 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: './database/migrations',
+      directory: './../migrations',
 
     },
   },
@@ -45,7 +47,7 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: './database/migrations',
+      directory: './../migrations',
     },
   },
 
@@ -62,7 +64,7 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: './database/migrations',
+      directory: './../migrations',
     },
   },
 

@@ -3,6 +3,7 @@ import request from 'supertest';
 import { hashSync } from 'bcrypt';
 
 import app from '../../src/app';
+import { USER_ROLE_ADMIN, USER_ROLE_USER } from '../../src/constants';
 import db from '../../src/config/db';
 import User from '../../src/models/User';
 
@@ -49,8 +50,9 @@ describe('users api tests : /api/users/*', () => {
 
   it('should create a new user with a valid data', async () => {
     const userData = {
-      email: 'aburamesino@gmail.com',
+      email: 'user@dev.com',
       password: 'secret',
+      role: USER_ROLE_USER,
       password_confirmation: 'secret',
     };
     const response = await request(app).post('/api/users').send(userData).set('Authorization', `Bearer ${accessToken}`);
@@ -81,7 +83,8 @@ describe('users api tests : /api/users/*', () => {
 
   it('should update a user with a valid data', async () => {
     const userData = {
-      email: 'johndoe@getnada.com',
+      email: 'user@dev.com',
+      role: USER_ROLE_ADMIN,
     };
     const response = await request(app).put('/api/users/1').send(userData).set('Authorization', `Bearer ${accessToken}`);
     expect(response.statusCode).to.be.equal(200);
