@@ -5,7 +5,7 @@ import { hashSync } from 'bcrypt';
 import app from '../../src/app';
 import { USER_ROLE_ADMIN, USER_ROLE_USER } from '../../src/constants';
 import db from '../../src/config/db';
-import User from '../../src/models/User';
+import User from '../../src/models/user';
 
 describe('users api tests : /api/users/*', () => {
   let accessToken = null;

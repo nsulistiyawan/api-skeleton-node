@@ -1,5 +1,5 @@
 import { hashSync } from 'bcrypt';
-import User from '../models/User';
+import User from '../models/user';
 
 /**
  *

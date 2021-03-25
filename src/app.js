@@ -9,8 +9,10 @@ app.use(bodyParser.json());
 
 app.use('/', routes);
 
-app.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
-  console.log(`Server started at http://${process.env.APP_HOST}:${process.env.APP_PORT}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
+    console.log(`Server started at http://${process.env.APP_HOST}:${process.env.APP_PORT}`);
+  });
+}
 
 export default app;

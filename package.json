@@ -26,6 +26,7 @@
     "@babel/register": "^7.12.10",
     "babel-watch": "^7.3.0",
     "chai": "^4.2.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -51,5 +52,10 @@
   "bugs": {
     "url": "https://github.com/nsulistiyawan/api-skeleton-node/issues"
   },
-  "homepage": "https://github.com/nsulistiyawan/api-skeleton-node#readme"
+  "homepage": "https://github.com/nsulistiyawan/api-skeleton-node#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

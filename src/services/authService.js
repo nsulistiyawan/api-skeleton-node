@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { compareSync } from 'bcrypt';
 import JWT from 'jsonwebtoken';
-import User from '../models/User';
+import User from '../models/user';
 
 export async function authenticate(credentials) {
   const user = await User.query().where('email', credentials.email).first();

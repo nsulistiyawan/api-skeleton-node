@@ -6,7 +6,7 @@ import { USER_ROLE_ADMIN, USER_ROLE_USER } from '../../src/constants';
 
 import app from '../../src/app';
 import db from '../../src/config/db';
-import User from '../../src/models/User';
+import User from '../../src/models/user';
 
 describe('auth api tests : /api/auth/*', () => {
   before(async () => {
